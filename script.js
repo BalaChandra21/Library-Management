@@ -48,19 +48,17 @@ function displayBooks() {
         `;
     });
 }
-
 function toggleIssue(index) {
     const today = new Date().toLocaleDateString();
 
     if (!books[index].issued) {
-        // Issue book
         books[index].issued = true;
         books[index].issueDate = today;
         books[index].returnDate = "-";
     } else {
-        // Return book
         books[index].issued = false;
         books[index].returnDate = today;
+        books[index].issueDate = "-";
     }
 
     displayBooks();
